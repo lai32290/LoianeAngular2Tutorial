@@ -1,20 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {CursosService} from "./cursos.service";
 
 @Component({
-  selector: 'app-cursos',
-  templateUrl: './cursos.component.html',
-  styleUrls: ['./cursos.component.css']
+    selector: 'app-cursos',
+    templateUrl: './cursos.component.html',
+    styleUrls: ['./cursos.component.css']
 })
 export class CursosComponent implements OnInit {
 
-  portalName:string;
-  courses: string[] = ['Java', 'PHP', 'Javascript'];
+    portalName: string;
+    courses: string[];
 
-  constructor() {
-    this.portalName = 'http://blabla.com'
-  }
+    constructor(private courseService: CursosService) {
+        this.portalName = 'http://blabla.com';
 
-  ngOnInit() {
-  }
+        this.courses = this.courseService.getCourses();
+    }
+
+    ngOnInit() {
+    }
 
 }
