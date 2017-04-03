@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CursosComponent implements OnInit {
 
-  constructor() { }
+  portalName:string;
+  courses: string[] = ['Java', 'PHP', 'Javascript'];
+
+  constructor() {
+    this.portalName = 'http://blabla.com'
+  }
 
   ngOnInit() {
   }
